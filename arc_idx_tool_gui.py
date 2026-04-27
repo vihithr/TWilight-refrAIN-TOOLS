@@ -73,16 +73,17 @@ class ArcIdxToolGui(tk.Tk):
 
     def _build_unpack_tab(self, tab: ttk.Frame) -> None:
         def browse_input() -> None:
+            d = filedialog.askdirectory(title="Select folder containing idx.dat + arc.dat")
+            if d:
+                self.unpack_input.set(d)
+
+        def browse_input_file() -> None:
             p = filedialog.askopenfilename(
-                title="Select idx.dat or arc.dat (or cancel to pick folder)",
+                title="Select idx.dat or arc.dat",
                 filetypes=[("DAT files", "*.dat"), ("All files", "*.*")],
             )
             if p:
                 self.unpack_input.set(p)
-                return
-            d = filedialog.askdirectory(title="Select folder containing idx.dat + arc.dat")
-            if d:
-                self.unpack_input.set(d)
 
         def browse_out() -> None:
             d = filedialog.askdirectory(title="Select output folder")
@@ -100,7 +101,8 @@ class ArcIdxToolGui(tk.Tk):
 
         ttk.Label(grid, text="Input (folder/idx.dat/arc.dat)").grid(row=0, column=0, sticky=tk.W, pady=4)
         ttk.Entry(grid, textvariable=self.unpack_input).grid(row=0, column=1, sticky=tk.EW, padx=8)
-        ttk.Button(grid, text="Browse", command=browse_input).grid(row=0, column=2, sticky=tk.E)
+        ttk.Button(grid, text="Browse Folder", command=browse_input).grid(row=0, column=2, sticky=tk.E)
+        ttk.Button(grid, text="File...", command=browse_input_file).grid(row=0, column=3, sticky=tk.E, padx=(6, 0))
 
         ttk.Label(grid, text="Output folder").grid(row=1, column=0, sticky=tk.W, pady=4)
         ttk.Entry(grid, textvariable=self.unpack_out).grid(row=1, column=1, sticky=tk.EW, padx=8)
@@ -136,16 +138,17 @@ class ArcIdxToolGui(tk.Tk):
 
     def _build_list_tab(self, tab: ttk.Frame) -> None:
         def browse_input() -> None:
+            d = filedialog.askdirectory(title="Select folder containing idx.dat + arc.dat")
+            if d:
+                self.list_input.set(d)
+
+        def browse_input_file() -> None:
             p = filedialog.askopenfilename(
-                title="Select idx.dat or arc.dat (or cancel to pick folder)",
+                title="Select idx.dat or arc.dat",
                 filetypes=[("DAT files", "*.dat"), ("All files", "*.*")],
             )
             if p:
                 self.list_input.set(p)
-                return
-            d = filedialog.askdirectory(title="Select folder containing idx.dat + arc.dat")
-            if d:
-                self.list_input.set(d)
 
         grid = ttk.Frame(tab)
         grid.pack(fill=tk.X)
@@ -154,7 +157,8 @@ class ArcIdxToolGui(tk.Tk):
 
         ttk.Label(grid, text="Input (folder/idx.dat/arc.dat)").grid(row=0, column=0, sticky=tk.W, pady=4)
         ttk.Entry(grid, textvariable=self.list_input).grid(row=0, column=1, sticky=tk.EW, padx=8)
-        ttk.Button(grid, text="Browse", command=browse_input).grid(row=0, column=2, sticky=tk.E)
+        ttk.Button(grid, text="Browse Folder", command=browse_input).grid(row=0, column=2, sticky=tk.E)
+        ttk.Button(grid, text="File...", command=browse_input_file).grid(row=0, column=3, sticky=tk.E, padx=(6, 0))
 
         grid.columnconfigure(1, weight=1)
 

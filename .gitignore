@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Build and packaging
+build/
+dist/
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+*.orig
+
+# Binary artifacts
+*.obj
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.dll
+
+# Tool output directories (customize as needed)
+unpacked/
+unpacked_batch/
+repacked/
+custom_data/
+decoded/

@@ -1,0 +1,47 @@
+name: Bug Report
+description: 报告工具异常、崩溃或行为错误
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: 感谢反馈！请尽量填写完整信息，便于快速定位问题。
+  - type: input
+    id: tool
+    attributes:
+      label: 相关工具
+      description: 例如 arc_idx_tool.py / fix_dialog_alignment.py
+      placeholder: arc_idx_tool.py
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: 运行环境
+      description: 系统、Python 版本、使用方式（CLI/GUI）
+      placeholder: Windows 11, Python 3.11, CLI
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 执行 ...
+        2. 输入 ...
+        3. 观察到 ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期行为
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: 实际行为 / 日志
+      description: 可粘贴报错栈、终端输出
+    validations:
+      required: true

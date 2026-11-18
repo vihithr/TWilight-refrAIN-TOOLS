@@ -24,7 +24,7 @@
 ## 快速开始
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/vihithr/TWilight-refrAIN-TOOLS.git
 cd "TWilight refrAIN TOOLS"
 python arc_idx_tool.py --help
 python arc_idx_tool_gui.py
@@ -89,7 +89,7 @@ This project is intended for learning, reverse-engineering research, and persona
 ## Quick Start
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/vihithr/TWilight-refrAIN-TOOLS.git
 cd "TWilight refrAIN TOOLS"
 python arc_idx_tool.py --help
 python arc_idx_tool_gui.py
